@@ -1,3 +1,4 @@
+from logger import log_event
 print("SERVER FILE STARTED")
 
 from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -11,6 +12,8 @@ class HoneypotServer(BaseHTTPRequestHandler):
         print("IP:", ip)
         print("Requested Path:", path)
         print("---------------------")
+        
+        log_event(ip, path)
 
         self.send_response(200)
         self.end_headers()

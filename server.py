@@ -1,3 +1,4 @@
+from analyzer import analyze_path
 from logger import log_event
 print("SERVER FILE STARTED")
 
@@ -13,7 +14,9 @@ class HoneypotServer(BaseHTTPRequestHandler):
         print("Requested Path:", path)
         print("---------------------")
         
-        log_event(ip, path)
+        reason = analyze_path(path)
+        log_event(ip , path , reason)
+        
 
         self.send_response(200)
         self.end_headers()

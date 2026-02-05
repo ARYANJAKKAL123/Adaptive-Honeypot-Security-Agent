@@ -14,8 +14,14 @@ class HoneypotServer(BaseHTTPRequestHandler):
         print("Requested Path:", path)
         print("---------------------")
         
-        reason = analyze_path(path)
-        log_event(ip , path , reason)
+        result = analyze_path(path)
+    
+    
+        reason = str(result[0])
+        score = str(result[1])
+        final_reason = reason + " |score: " + score
+        log_event( ip , path , final_reason)
+      
         
 
         self.send_response(200)

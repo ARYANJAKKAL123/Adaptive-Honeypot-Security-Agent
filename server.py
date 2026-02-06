@@ -11,7 +11,7 @@ class HoneypotServer(BaseHTTPRequestHandler):
         path = self.path
 
         print("IP:", ip)
-        print("Requested Path:", path)
+        print("Requested Path:", path) 
         print("---------------------")
         
         result = analyze_path(path)

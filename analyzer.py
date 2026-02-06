@@ -13,13 +13,21 @@ def analyze_path(path):
 
     score = 0
     reason = "NORMAL"
-
-    if ".." in path:
+    
+    path_trimmed = path.split("/");
+    
+    print(path_trimmed)
+    
+    if path_trimmed.index(".."):
         score += 3
         reason = "TRAVERSAL_ATTEMPT"
 
+    # if ".." in path:
+    #     score += 3
+    #     reason = "TRAVERSAL_ATTEMPT"
+
     for word in SENSITIVE_KEYWORDS:
-     print("Checking:", word, "against", path.lower())
+     print("Checking:", word, "against", path.lower()) 
 
      if word in path.lower():
         print("MATCHED WORD:", word)

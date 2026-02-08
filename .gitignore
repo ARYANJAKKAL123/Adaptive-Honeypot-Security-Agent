@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Personal Learning Files (not needed in repo)
+8_WEEK_PLAN.md
+DAY_*_CHECKLIST.md
+DAY_*_SIMPLE_CHECKLIST.md
+PROGRESS_TRACKER.md
+QUICK_START.md
+START_HERE.md
+END_OF_DAY_GIT_PROCESS.md
+DAILY_LEARNING_PLAN.md
+
+# Keep these files (they ARE important for the repo)
+# README.md - project documentation
+# pyproject.toml - project configuration
+# config/ - configuration files
+# src/ - source code
+# tests/ - test files

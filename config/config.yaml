@@ -1,0 +1,16 @@
+agent:
+  name: "honeypot-agent-01"
+  log_level: "INFO"
+
+monitoring:
+  watch_directories:
+    - "/path/to/monitor"  # Change this to your test folder
+  
+threat_detection:
+  threshold: 50  # Deploy decoys when score > 50
+  
+decoy:
+  enabled: true
+  types:
+    - credentials
+    - documents

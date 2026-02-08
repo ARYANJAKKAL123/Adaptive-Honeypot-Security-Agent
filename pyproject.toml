@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "honeypot-agent"
+version = "0.1.0"
+description = "Adaptive File System Honeypot Agent"
+requires-python = ">=3.10"
+
+dependencies = [
+    "watchdog>=3.0.0",
+    "pyyaml>=6.0",
+    "faker>=20.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+]

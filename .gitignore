@@ -53,6 +53,9 @@ DAILY_LEARNING_PLAN.md
 # Kiro internal files (personal learning and specs)
 .kiro/
 
+# Learning documentation folder
+docs/
+
 # Keep these files (they ARE important for the repo)
 # README.md - project documentation
 # pyproject.toml - project configuration

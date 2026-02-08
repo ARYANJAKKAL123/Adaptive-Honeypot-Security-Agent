@@ -27,8 +27,16 @@ source venv/bin/activate  # or venv\Scripts\activate on Windows
 python src/agent/main.py
 ```
 
-## Authors
+## Author
 
-[Aryan Jakkal , Dhirayshil Sarwade ]  
+Aryan Jakkal & Dhirayshil Sarwade  
 3rd Year Diploma Students  
 Final Year Project - 2025
+
+---
+
+## 📚 Learning Documentation
+
+All learning materials, checklists, and progress tracking are in the **`docs/`** folder.
+
+**Start here:** [`docs/START_HERE.md`](docs/START_HERE.md)

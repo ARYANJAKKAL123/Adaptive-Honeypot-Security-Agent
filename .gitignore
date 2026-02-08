@@ -50,6 +50,9 @@ START_HERE.md
 END_OF_DAY_GIT_PROCESS.md
 DAILY_LEARNING_PLAN.md
 
+# Kiro internal files (personal learning and specs)
+.kiro/
+
 # Keep these files (they ARE important for the repo)
 # README.md - project documentation
 # pyproject.toml - project configuration

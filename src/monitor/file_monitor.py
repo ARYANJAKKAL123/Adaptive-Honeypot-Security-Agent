@@ -1,3 +1,4 @@
+from logger import EventLogger
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
@@ -7,23 +8,24 @@ class FileMonitor(FileSystemEventHandler):
     
     def __init__(self):
         super().__init__()
-        print("FileMonitor initialized")
+        self.logger = EventLogger()
+        self.logger.log_info("FileMonitor initialized")
     
     def on_created(self, event):
         """Called when a file is created """
         if not event.is_directory:
-            print(f"File Created: {event.src_path}")
+            self.logger.log_info(f"File Created: {event.src_path}")
     
     
     def on_modified(self, event):
         """Called when a file is modifed"""
         if not event.is_directory:
-            print(f"File Modified: {event.src_path}")
+            self.logger.log_info(f"File Modified: {event.src_path}")
     
     def on_deleted(self,event):
         """Called when a file is deleted"""
         if not event.is_directory:
-            print(f"File Deleted:{event.src_path}")
+            self.logger.log_info(f"File Deleted:{event.src_path}")
 
 def start_monitoring(path_to_watch):
     """ Start monitoring a directory"""

@@ -36,11 +36,19 @@ An adaptive file system honeypot that monitors file activity, detects suspicious
 
 **Files:** `src/monitor/file_monitor.py`
 
+### ✅ Day 5-6: Event Logging System
+- **EventLogger class** - Professional logging with timestamps
+- **Log levels** - INFO, WARNING, ERROR support
+- **File-based logging** - Persistent event records in logs/events.log
+- **Integration** - FileMonitor now logs all events
+
+**Files:** `src/monitor/logger.py`, updated `src/monitor/file_monitor.py`
+
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 5-6: Event Logging (Next)
+### 🔨 Day 7-8: Testing & Bug Fixes (Next)
 - Logger class for persistent event storage
 - Timestamp tracking
 - Log levels (INFO, WARNING, ERROR)
@@ -50,12 +58,12 @@ An adaptive file system honeypot that monitors file activity, detects suspicious
 
 ## 📊 Development Progress
 
-**Overall:** 7% Complete (4/56 days)
+**Overall:** 11% Complete (6/56 days)
 
-### Week 1-2: Foundation (29% Complete)
+### Week 1-2: Foundation (43% Complete)
 - [x] Day 1-2: Project setup
 - [x] Day 3-4: File monitoring
-- [ ] Day 5-6: Event logging
+- [x] Day 5-6: Event logging
 - [ ] Day 7-8: Testing & bug fixes
 - [ ] Day 9-10: Threat detection algorithm
 - [ ] Day 11-12: Scoring system
@@ -194,6 +202,13 @@ pytest tests/test_monitor.py
 ---
 
 ## 📝 Recent Updates
+
+### February 8, 2026
+- ✅ Completed Day 5-6: Event logging system
+- ✅ Created EventLogger class with log levels
+- ✅ Integrated logging with FileMonitor
+- ✅ All events now logged to files with timestamps
+- 📊 Progress: 11% complete
 
 ### February 8, 2026
 - ✅ Completed Day 3-4: File monitoring system

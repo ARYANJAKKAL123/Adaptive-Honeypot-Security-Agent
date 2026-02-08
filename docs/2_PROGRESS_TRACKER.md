@@ -1,0 +1,242 @@
+# 📊 Progress Tracker
+
+**Authors:** Aryan Jakkal & Dhirayshil Sarwade  
+**Project:** Adaptive File System Honeypot Agent  
+**Start Date:** _________  
+**Target End Date:** _________
+
+---
+
+## 📌 HOW THIS FILE WORKS
+
+**🤖 AUTOMATIC UPDATES!**
+
+This file is automatically updated by Kiro when you complete tasks!
+
+**What you do:**
+1. Work on tasks in `1_DAILY_TASKS.md`
+2. Check ✅ boxes as you complete them
+3. Tell me: "I completed Day X" or "Day X done"
+
+**What I do automatically:**
+- ✅ Update progress percentages
+- ✅ Record completion dates
+- ✅ Update milestones
+- ✅ Calculate overall progress
+- ✅ Remind you to Git commit
+
+**You just focus on coding - I'll track everything!** 🚀
+
+---
+
+## 🎯 Overall Progress
+
+**Days Completed:** 6 / 56  
+**Weeks Completed:** 0.75 / 8  
+**Overall Progress:** 11%
+
+**Current Status:** 🟢 On Track
+
+**Last Updated:** Day 5-6 completed - Event logging system working!
+
+---
+
+## 📅 Weekly Progress
+
+### Week 1-2: Foundation ✅ IN PROGRESS
+- [x] Day 1-2: Project setup ✅ COMPLETED
+- [ ] Day 3-4: File monitoring
+- [ ] Day 5-6: Event logging
+- [ ] Day 7-8: Testing
+- [ ] Day 9-10: Threat detection
+- [ ] Day 11-12: Scoring system
+- [ ] Day 13-14: Review
+
+**Week 1-2 Status:** 43% complete (Day 1-2, Day 3-4, Day 5-6 done)
+
+---
+
+### Week 3-4: Core Features
+- [ ] Day 15-16: Decoy generator
+- [ ] Day 17-18: Decoy deployment
+- [ ] Day 19-20: Decoy tracking
+- [ ] Day 21-22: Alert system
+- [ ] Day 23-24: Email alerts
+- [ ] Day 25-26: Integration testing
+- [ ] Day 27-28: Review
+
+**Week 3-4 Status:** ___% complete
+
+---
+
+### Week 5-6: Service & Dashboard
+- [ ] Day 29-30: Windows service
+- [ ] Day 31-32: Service testing
+- [ ] Day 33-34: Web dashboard
+- [ ] Day 35-36: Dashboard features
+- [ ] Day 37-38: Real-time updates
+- [ ] Day 39-40: Polish
+- [ ] Day 41-42: Review
+
+**Week 5-6 Status:** ___% complete
+
+---
+
+### Week 7-8: Testing & Documentation
+- [ ] Day 43-44: System testing
+- [ ] Day 45-46: Bug fixes
+- [ ] Day 47-48: Performance testing
+- [ ] Day 49-50: Documentation
+- [ ] Day 51-52: User guide
+- [ ] Day 53-54: Presentation prep
+- [ ] Day 55-56: Final review
+
+**Week 7-8 Status:** ___% complete
+
+---
+
+## 💾 Git Commit Log
+
+**Record your daily commits here:**
+
+### Day 1-2
+- **Date:** _________
+- **Commit:** `git commit -m "Day 1: Project setup - virtual env, folder structure, dependencies, config files"`
+- **Status:** ✅ Pushed to GitHub
+
+---
+
+### Day 3-4
+- **Date:** February 8, 2026
+- **Commit:** `git commit -m "Day 3-4: Implemented file monitoring with watchdog library"`
+- **Status:** ⏳ Not yet committed
+
+---
+
+### Day 5-6
+- **Date:** February 8, 2026
+- **Commit:** `git commit -m "Day 5-6: Implemented event logging system"`
+- **Status:** ⏳ Not yet committed
+
+---
+
+### Day 7-8
+- **Date:** _________
+- **Commit:** `git commit -m "Day 7-8: ___________________"`
+- **Status:** ⏳ Not yet / ✅ Pushed
+
+---
+
+### Day 9-10
+- **Date:** _________
+- **Commit:** `git commit -m "Day 9-10: ___________________"`
+- **Status:** ⏳ Not yet / ✅ Pushed
+
+---
+
+**Continue adding your commits as you progress...**
+
+---
+
+## 🔄 Daily Git Workflow
+
+**Run these 4 commands at the end of each day:**
+
+```bash
+# 1. Check what changed
+git status
+
+# 2. Add all changes
+git add .
+
+# 3. Commit with descriptive message
+git commit -m "Day X: Brief description of what you did"
+
+# 4. Push to GitHub
+git push
+```
+
+---
+
+## 🏆 Milestones Achieved
+
+- [x] **Milestone 1:** Project setup complete (Day 1-2) ✅
+- [ ] **Milestone 2:** File monitoring working (Day 3-8)
+- [ ] **Milestone 3:** Threat detection working (Day 9-14)
+- [ ] **Milestone 4:** Decoy system working (Day 15-22)
+- [ ] **Milestone 5:** Alert system working (Day 23-28)
+- [ ] **Milestone 6:** Service deployed (Day 29-36)
+- [ ] **Milestone 7:** Dashboard complete (Day 37-42)
+- [ ] **Milestone 8:** Project complete! (Day 43-56)
+
+---
+
+## 🚧 Blockers & Challenges
+
+**Record any problems you face:**
+
+### Week 1-2
+```
+Problem: 
+
+Solution: 
+
+```
+
+### Week 3-4
+```
+Problem: 
+
+Solution: 
+
+```
+
+### Week 5-6
+```
+Problem: 
+
+Solution: 
+
+```
+
+### Week 7-8
+```
+Problem: 
+
+Solution: 
+
+```
+
+---
+
+## 💡 Ideas & Improvements
+
+**Things you want to add or improve:**
+
+```
+1. 
+
+2. 
+
+3. 
+
+```
+
+---
+
+## 📝 Notes for Presentation
+
+**Key points to mention in your final presentation:**
+
+```
+1. 
+
+2. 
+
+3. 
+
+```
+
+---
+
+**Update this file daily to track your progress!** 📈

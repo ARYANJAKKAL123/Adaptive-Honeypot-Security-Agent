@@ -14,7 +14,7 @@ class EventLogger:
         """
         log_dir = os.path.dirname(log_file)
         if log_dir and not os.path.exists(log_dir):
-            os.mkdirs(log_dir)
+            os.makedirs(log_dir)
         
         self.log_file = log_file #Stores the log file path
         

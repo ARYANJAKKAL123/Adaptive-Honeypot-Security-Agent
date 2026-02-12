@@ -1,8 +1,8 @@
 # Adaptive File System Honeypot Agent
 
 **Final Year Diploma Project - 2025**  
-**Authors:** Aryan Jakkal & Dhirayshil Sarwade  
-**Status:** 🟢 In Development (Week 1 - 7% Complete)
+**Authors:** Aryan Jakkal & Dhairayshil Sarwade  
+**Status:** 🟢 In Development (Week 1 - 14% Complete)
 
 ---
 
@@ -44,27 +44,36 @@ An adaptive file system honeypot that monitors file activity, detects suspicious
 
 **Files:** `src/monitor/logger.py`, updated `src/monitor/file_monitor.py`
 
+### ✅ Day 7-8: Testing & Bug Fixes
+- **Test suite** - 4 comprehensive tests for all components
+- **Logger tests** - Verify logger creation and log levels
+- **Monitor tests** - Test FileMonitor and event handling
+- **Mock objects** - Created fake events for testing
+- **All tests passing** - 4/4 tests successful
+
+**Files:** `tests/simple_test.py`
+
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 7-8: Testing & Bug Fixes (Next)
-- Logger class for persistent event storage
-- Timestamp tracking
-- Log levels (INFO, WARNING, ERROR)
-- File-based logging system
+### 🔨 Day 9-10: Threat Detection Algorithm (Next)
+- ThreatDetector class
+- Scoring system (0-100 scale)
+- Suspicious behavior rules
+- Pattern detection
 
 ---
 
 ## 📊 Development Progress
 
-**Overall:** 11% Complete (6/56 days)
+**Overall:** 14% Complete (8/56 days)
 
-### Week 1-2: Foundation (43% Complete)
+### Week 1-2: Foundation (57% Complete)
 - [x] Day 1-2: Project setup
 - [x] Day 3-4: File monitoring
 - [x] Day 5-6: Event logging
-- [ ] Day 7-8: Testing & bug fixes
+- [x] Day 7-8: Testing & bug fixes
 - [ ] Day 9-10: Threat detection algorithm
 - [ ] Day 11-12: Scoring system
 - [ ] Day 13-14: Week review
@@ -203,12 +212,18 @@ pytest tests/test_monitor.py
 
 ## 📝 Recent Updates
 
+### February 13, 2026
+- ✅ Completed Day 7-8: Testing & bug fixes
+- ✅ Created comprehensive test suite with 4 tests
+- ✅ All tests passing (logger, logging levels, monitor, events)
+- ✅ Fixed bugs in imports and indentation
+- 📊 Progress: 14% complete
+
 ### February 8, 2026
 - ✅ Completed Day 5-6: Event logging system
 - ✅ Created EventLogger class with log levels
 - ✅ Integrated logging with FileMonitor
 - ✅ All events now logged to files with timestamps
-- 📊 Progress: 11% complete
 
 ### February 8, 2026
 - ✅ Completed Day 3-4: File monitoring system

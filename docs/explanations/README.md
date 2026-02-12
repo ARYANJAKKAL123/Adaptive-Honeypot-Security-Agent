@@ -13,6 +13,16 @@ This folder contains in-depth explanations for each day's work.
   - Concepts: Observer pattern, event-driven programming, inheritance
   - How it fits in the project
 
+- **[DAY_5-6_DETAILED_EXPLANATION.md](DAY_5-6_DETAILED_EXPLANATION.md)** - Event Logging System
+  - Line-by-line code breakdown
+  - Concepts: Logging, log levels, instance variables, relative imports
+  - How it fits in the project
+
+- **[DAY_7-8_DETAILED_EXPLANATION.md](DAY_7-8_DETAILED_EXPLANATION.md)** - Testing & Bug Fixes
+  - Line-by-line code breakdown
+  - Concepts: Unit testing, mock objects, try-except, file operations
+  - How it fits in the project
+
 ---
 
 ## 📖 How to Use These Files

@@ -112,24 +112,25 @@
 
 ---
 
-## 📅 Day 7-8: Testing & Bug Fixes
+## 📅 Day 7-8: Testing & Bug Fixes ✅ COMPLETED
 
-**Date:** _________
+**Date Completed:** February 13, 2026
 
 **Tasks:**
-- [ ] Write unit tests in `tests/test_monitor.py`
-- [ ] Test edge cases (empty files, large files)
-- [ ] Fix any bugs found
-- [ ] Document your code with comments
-- [ ] Review Week 1 progress
+- [x] Write unit tests in `tests/simple_test.py`
+- [x] Test logger creation and log levels
+- [x] Test FileMonitor creation and event handling
+- [x] Fix bugs (indentation, imports, typos)
+- [x] All 4 tests passing successfully
 
 **What I Learned:**
 ```
-1. 
-
-2. 
-
-3. 
+1. Testing is essential - write tests to verify code works correctly before moving forward
+2. Try-except blocks catch errors gracefully without crashing the program
+3. Mock objects let you test code without needing real files or events
+4. Python's logging module has limitations - basicConfig() only works once per program
+5. Indentation and function placement are critical in Python - functions must be defined before they're called
+6. Tuple unpacking and generator expressions make code cleaner and more Pythonic
 ```
 
 ---

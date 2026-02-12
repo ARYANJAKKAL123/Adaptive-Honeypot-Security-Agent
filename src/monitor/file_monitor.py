@@ -1,4 +1,4 @@
-from logger import EventLogger
+from .logger import EventLogger
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time

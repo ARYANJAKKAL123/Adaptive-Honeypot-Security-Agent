@@ -596,7 +596,6 @@ Special thanks to:
 
 ### 🚀 Building the Future of Adaptive Security
 
-**Made with ❤️ and Python**
 
 [![GitHub](https://img.shields.io/badge/GitHub-ARYANJAKKAL123-181717?style=flat&logo=github)](https://github.com/ARYANJAKKAL123)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)

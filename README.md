@@ -6,7 +6,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Development Status](https://img.shields.io/badge/status-in%20development-yellow.svg)]()
-[![Progress](https://img.shields.io/badge/progress-18%25-brightgreen.svg)]()
+[![Progress](https://img.shields.io/badge/progress-21%25-brightgreen.svg)]()
 [![License](https://img.shields.io/badge/license-Educational-orange.svg)]()
 
 **Final Year Diploma Project - 2025**  
@@ -97,7 +97,7 @@ graph LR
 
 ## 🚀 Current Features (Implemented)
 
-### ✅ Phase 1: Foundation (71% Complete)
+### ✅ Phase 1: Foundation (86% Complete)
 
 <details open>
 <summary><b>🔧 Day 1-2: Project Setup</b></summary>
@@ -208,17 +208,59 @@ else: return "Normal"                 # 🟢 Continue
 
 </details>
 
+<details open>
+<summary><b>🔗 Day 11-12: System Integration</b></summary>
+
+```python
+# Real-time threat detection integrated with monitoring
+class FileMonitor(FileSystemEventHandler):
+    def __init__(self):
+        self.threat_detector = ThreatDetector()  # Integration!
+    
+    def on_created(self, event):
+        self.logger.log_info(f"File Created: {event.src_path}")
+        
+        # Analyze threat in real-time
+        self.threat_detector.add_event("created", event.src_path)
+        threat_level = self.threat_detector.get_threat_level()
+        threat_score = self.threat_detector.threat_score
+        
+        # Warn if suspicious
+        if threat_score >= 31:
+            self.logger.log_warning(
+                f"Threat Level: {threat_level} (Score: {threat_score})"
+            )
+```
+
+**Features:**
+- 🔗 FileMonitor + ThreatDetector working together
+- ⚡ Real-time threat analysis on every file event
+- 🚨 Automatic warnings for suspicious activity (score >= 31)
+- 🎯 All event types integrated (created, modified, deleted)
+
+**What Changed:**
+- Added `ThreatDetector` instance to `FileMonitor`
+- Updated all event handlers to analyze threats
+- Implemented automatic warning system
+- Fixed configuration issues (pyproject.toml)
+
+**Files:** `src/monitor/file_monitor.py`  
+**Status:** 🟢 Complete
+
+</details>
+
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 11-12: System Integration (Next)
+### 🔨 Day 13-14: Week 2 Review (Next)
 
 ```
-⏳ Integrate ThreatDetector with FileMonitor
-⏳ Real-time threat detection during monitoring
-⏳ Fine-tune detection thresholds
-⏳ End-to-end system testing
+⏳ Review all Week 1-2 code
+⏳ Fix any remaining bugs
+⏳ Update all documentation
+⏳ Comprehensive system testing
+⏳ Prepare for Week 3 (Decoy system)
 ```
 
 ---
@@ -227,10 +269,10 @@ else: return "Normal"                 # 🟢 Continue
 
 <div align="center">
 
-### Overall Progress: 18% Complete
+### Overall Progress: 21% Complete
 
 ```
-████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 10/56 days
+██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 12/56 days
 ```
 
 </div>
@@ -252,12 +294,12 @@ else: return "Normal"                 # 🟢 Continue
 ✅ Event logging<br/>
 ✅ Testing system<br/>
 ✅ Threat detection<br/>
-⏳ System integration<br/>
+✅ System integration<br/>
 ⏳ Week review
 </td>
 <td>
-<b>71%</b><br/>
-🟢 5/7 days
+<b>86%</b><br/>
+🟢 6/7 days
 </td>
 </tr>
 

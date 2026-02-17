@@ -176,24 +176,37 @@
 
 ---
 
-## 📅 Day 11-12: Scoring System Refinement
+## 📅 Day 11-12: System Integration (FileMonitor + ThreatDetector) ✅ COMPLETED
 
-**Date:** _________
+**Date Completed:** February 17, 2026
 
 **Tasks:**
-- [ ] Add more threat indicators
-- [ ] Adjust score thresholds
-- [ ] Test scoring accuracy
-- [ ] Create threat level categories (Low, Medium, High)
-- [ ] Document scoring logic
+- [x] Integrate ThreatDetector with FileMonitor
+- [x] Add threat detection to all event handlers (on_created, on_modified, on_deleted)
+- [x] Log warnings when threat score >= 31
+- [x] Test integrated system with real file operations
+- [x] Fix pyproject.toml configuration issues
+- [x] Install dependencies and run system successfully
+
+**Code Changes:**
+```python
+# src/monitor/file_monitor.py
+- Added import: from .threat_detector import ThreatDetector ✅
+- Created instance: self.threat_detector = ThreatDetector() ✅
+- Updated on_created() to send events and check threat level ✅
+- Updated on_modified() to send events and check threat level ✅
+- Updated on_deleted() to send events and check threat level ✅
+```
 
 **What I Learned:**
 ```
-1. 
-
-2. 
-
-3. 
+1. System integration connects multiple components - FileMonitor now uses ThreatDetector in real-time
+2. Instance variables (self.threat_detector) make objects available across all class methods
+3. Real-time threat detection works by: detect event → add to detector → calculate score → log if suspicious
+4. pyproject.toml must have valid TOML syntax - corrupted config files prevent dependency installation
+5. Testing integrated systems requires running the actual program, not just unit tests
+6. The -e flag in pip install makes code changes take effect immediately without reinstalling
+7. Step-by-step implementation helps understand how components connect and work together
 ```
 
 ---

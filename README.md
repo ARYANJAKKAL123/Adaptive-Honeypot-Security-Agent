@@ -1,130 +1,347 @@
-# Adaptive File System Honeypot Agent
+<div align="center">
+
+# 🛡️ Adaptive File System Honeypot Agent
+
+### *An Intelligent Security System That Learns and Adapts*
+
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
+[![Development Status](https://img.shields.io/badge/status-in%20development-yellow.svg)]()
+[![Progress](https://img.shields.io/badge/progress-18%25-brightgreen.svg)]()
+[![License](https://img.shields.io/badge/license-Educational-orange.svg)]()
 
 **Final Year Diploma Project - 2025**  
-**Authors:** Aryan Jakkal & Dhairayshil Sarwade  
-**Status:** 🟢 In Development (Week 1-2 - 18% Complete)
+*Aryan Jakkal & Dhairayshil Sarwade*
+
+[Features](#-key-features) • [Installation](#-installation) • [Usage](#-usage) • [Progress](#-development-progress) • [Documentation](#-documentation)
+
+</div>
 
 ---
 
-## 📋 Project Overview
+## 🎯 Project Vision
 
-An adaptive file system honeypot that monitors file activity, detects suspicious behavior, and automatically deploys decoy files to trap attackers.
+Imagine a security system that doesn't just watch—it **thinks**. Our Adaptive File System Honeypot doesn't wait for attacks to happen; it **predicts** them, **adapts** to them, and **traps** attackers in their own game.
 
-### Key Features
+This isn't just monitoring. This is **intelligent defense**.
 
-- 🔍 **Real-time File Monitoring** - Detects file creation, modification, and deletion
-- 🎯 **Threat Detection** - Scores suspicious behavior using custom algorithm
-- 🎭 **Adaptive Decoy Deployment** - Automatically creates fake files when threats detected
-- 🚨 **Alert System** - Notifies when attackers access decoys
-- 📊 **Dashboard** - Web interface to monitor activity
+---
+
+## 🌟 Key Features
+
+<table>
+<tr>
+<td width="50%">
+
+### 🔍 Real-Time Monitoring
+Continuously watches your file system, detecting every creation, modification, and deletion in milliseconds.
+
+**Technology:** Watchdog library with Observer pattern
+
+</td>
+<td width="50%">
+
+### 🧠 Intelligent Threat Detection
+Analyzes behavior patterns using a sophisticated scoring algorithm. Knows the difference between a user and an attacker.
+
+**Algorithm:** Multi-rule scoring system (0-100 scale)
+
+</td>
+</tr>
+<tr>
+<td width="50%">
+
+### 🎭 Adaptive Decoy Deployment
+Automatically creates convincing fake files when threats are detected. Attackers think they found gold—but it's a trap.
+
+**Strategy:** Context-aware decoy generation
+
+</td>
+<td width="50%">
+
+### 🚨 Smart Alert System
+Instant notifications when attackers access decoys. You know exactly when and how they're trying to breach your system.
+
+**Response:** Multi-level alerting (Elevated → Critical)
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🎬 How It Works
+
+```mermaid
+graph LR
+    A[File Activity] --> B[Monitor]
+    B --> C[Log Events]
+    C --> D[Analyze Patterns]
+    D --> E{Threat Score}
+    E -->|0-30: Normal| F[Continue Monitoring]
+    E -->|31-50: Elevated| G[Watch Closely]
+    E -->|51-70: Suspicious| H[Deploy Decoys]
+    E -->|71-100: Critical| I[Deploy + Alert]
+    H --> J[Trap Attacker]
+    I --> J
+```
+
+### The Intelligence Behind It
+
+1. **👀 Observe** - Monitor every file system event in real-time
+2. **🧮 Analyze** - Calculate threat scores using multiple detection rules
+3. **🎯 Detect** - Identify suspicious patterns (rapid access, unusual times, sensitive files)
+4. **🎭 Deceive** - Deploy realistic decoy files to trap attackers
+5. **📢 Alert** - Notify administrators when decoys are accessed
 
 ---
 
 ## 🚀 Current Features (Implemented)
 
-### ✅ Day 1-2: Project Setup
-- Virtual environment configured
-- Project structure created
-- Dependencies installed (watchdog, pyyaml, faker, pytest)
-- Git repository initialized
+### ✅ Phase 1: Foundation (71% Complete)
 
-### ✅ Day 3-4: File Monitoring System
-- **FileMonitor class** - Monitors file system events
-- **Event detection** - Tracks file created, modified, deleted
-- **Observer pattern** - Continuous monitoring using watchdog library
-- **Test suite** - Verified monitoring functionality
+<details open>
+<summary><b>🔧 Day 1-2: Project Setup</b></summary>
 
-**Files:** `src/monitor/file_monitor.py`
+```
+✓ Virtual environment configured
+✓ Project structure created  
+✓ Dependencies installed (watchdog, pyyaml, faker, pytest)
+✓ Git repository initialized
+```
 
-### ✅ Day 5-6: Event Logging System
-- **EventLogger class** - Professional logging with timestamps
-- **Log levels** - INFO, WARNING, ERROR support
-- **File-based logging** - Persistent event records in logs/events.log
-- **Integration** - FileMonitor now logs all events
+**Status:** 🟢 Complete
 
-**Files:** `src/monitor/logger.py`, updated `src/monitor/file_monitor.py`
+</details>
 
-### ✅ Day 7-8: Testing & Bug Fixes
-- **Test suite** - 4 comprehensive tests for all components
-- **Logger tests** - Verify logger creation and log levels
-- **Monitor tests** - Test FileMonitor and event handling
-- **Mock objects** - Created fake events for testing
-- **All tests passing** - 4/4 tests successful
+<details open>
+<summary><b>👁️ Day 3-4: File Monitoring System</b></summary>
 
-**Files:** `tests/simple_test.py`
+```python
+# Real-time file system monitoring
+class FileMonitor(FileSystemEventHandler):
+    def on_created(self, event):   # Detects new files
+    def on_modified(self, event):  # Detects changes
+    def on_deleted(self, event):   # Detects deletions
+```
 
-### ✅ Day 9-10: Threat Detection Algorithm
-- **ThreatDetector class** - Analyzes file events and calculates threat scores
-- **Scoring system** - 0-100 scale with multiple detection rules
-- **Rapid access detection** - Detects too many files accessed quickly (+20 points)
-- **Unusual time detection** - Flags activity during midnight-5AM (+15 points)
-- **Sensitive file detection** - Identifies password/key/config files (+25 points)
-- **Deletion detection** - Catches mass file deletions (+30 points)
-- **Threat levels** - Normal, Elevated, Suspicious, Critical categories
-- **Test scenarios** - Comprehensive testing with sample data
+**Features:**
+- 🔄 Continuous monitoring using Observer pattern
+- 📁 Recursive directory watching
+- ⚡ Instant event detection
+- 🧪 Comprehensive test suite
 
-**Files:** `src/monitor/threat_detector.py`
+**Files:** `src/monitor/file_monitor.py`  
+**Status:** 🟢 Complete
+
+</details>
+
+<details open>
+<summary><b>📝 Day 5-6: Event Logging System</b></summary>
+
+```python
+# Professional logging with timestamps
+logger.log_info("File created: document.txt")
+logger.log_warning("Suspicious activity detected")
+logger.log_error("System error occurred")
+```
+
+**Features:**
+- ⏰ Automatic timestamps
+- 📊 Multiple log levels (INFO, WARNING, ERROR)
+- 💾 Persistent file-based logging
+- � Integrated with FileMonitor
+
+**Files:** `src/monitor/logger.py`  
+**Status:** 🟢 Complete
+
+</details>
+
+<details open>
+<summary><b>🧪 Day 7-8: Testing & Quality Assurance</b></summary>
+
+```bash
+✓ 4/4 tests passing
+✓ Logger creation and log levels verified
+✓ FileMonitor and event handling tested
+✓ Mock objects for isolated testing
+```
+
+**Features:**
+- ✅ Comprehensive test suite
+- 🎭 Mock objects for testing
+- 🐛 Bug fixes and code quality improvements
+- 📈 100% test pass rate
+
+**Files:** `tests/simple_test.py`  
+**Status:** 🟢 Complete
+
+</details>
+
+<details open>
+<summary><b>🧠 Day 9-10: Threat Detection Algorithm</b></summary>
+
+```python
+# Intelligent threat scoring
+Score = rapid_access(+20) + unusual_time(+15) + 
+        sensitive_files(+25) + deletions(+30)
+
+if score >= 71:  return "Critical"   # 🔴 Deploy + Alert
+elif score >= 51: return "Suspicious" # 🟠 Deploy Decoys
+elif score >= 31: return "Elevated"   # 🟡 Watch Closely
+else: return "Normal"                 # 🟢 Continue
+```
+
+**Detection Rules:**
+- ⚡ **Rapid Access:** 5+ files in 10 seconds → +20 points
+- 🌙 **Unusual Time:** Activity at midnight-5AM → +15 points
+- 🔐 **Sensitive Files:** passwords, keys, configs → +25 points
+- 🗑️ **Mass Deletion:** 3+ files in 30 seconds → +30 points
+
+**Threat Levels:**
+- 🟢 **Normal (0-30):** Regular activity
+- 🟡 **Elevated (31-50):** Slightly unusual
+- 🟠 **Suspicious (51-70):** Likely threat - Deploy decoys
+- 🔴 **Critical (71-100):** Active attack - Deploy + Alert
+
+**Files:** `src/monitor/threat_detector.py`  
+**Status:** 🟢 Complete
+
+</details>
 
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 11-12: Scoring System Refinement (Next)
-- Integration with FileMonitor
-- Real-time threat detection
-- Fine-tune thresholds
-- Additional threat indicators
+### 🔨 Day 11-12: System Integration (Next)
+
+```
+⏳ Integrate ThreatDetector with FileMonitor
+⏳ Real-time threat detection during monitoring
+⏳ Fine-tune detection thresholds
+⏳ End-to-end system testing
+```
 
 ---
 
 ## 📊 Development Progress
 
-**Overall:** 18% Complete (10/56 days)
+<div align="center">
 
-### Week 1-2: Foundation (71% Complete)
-- [x] Day 1-2: Project setup
-- [x] Day 3-4: File monitoring
-- [x] Day 5-6: Event logging
-- [x] Day 7-8: Testing & bug fixes
-- [x] Day 9-10: Threat detection algorithm
-- [ ] Day 11-12: Scoring system
-- [ ] Day 13-14: Week review
+### Overall Progress: 18% Complete
 
-### Week 3-4: Core Features (0% Complete)
-- [ ] Day 15-16: Decoy file generator
-- [ ] Day 17-18: Decoy deployment
-- [ ] Day 19-20: Decoy tracking
-- [ ] Day 21-22: Alert system
-- [ ] Day 23-24: Email/log alerts
-- [ ] Day 25-26: Integration testing
-- [ ] Day 27-28: Week review
+```
+████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 10/56 days
+```
 
-### Week 5-6: Service & Dashboard (0% Complete)
-- [ ] Day 29-30: Windows service setup
-- [ ] Day 31-32: Service testing
-- [ ] Day 33-34: Web dashboard
-- [ ] Day 35-36: Dashboard features
-- [ ] Day 37-38: Real-time updates
-- [ ] Day 39-40: Polish
-- [ ] Day 41-42: Week review
+</div>
 
-### Week 7-8: Testing & Documentation (0% Complete)
-- [ ] Day 43-56: System testing, bug fixes, documentation, presentation prep
+### 📅 Development Timeline
+
+<table>
+<tr>
+<th width="25%">Phase</th>
+<th width="50%">Tasks</th>
+<th width="25%">Status</th>
+</tr>
+
+<tr>
+<td><b>Week 1-2</b><br/>Foundation</td>
+<td>
+✅ Project setup<br/>
+✅ File monitoring<br/>
+✅ Event logging<br/>
+✅ Testing system<br/>
+✅ Threat detection<br/>
+⏳ System integration<br/>
+⏳ Week review
+</td>
+<td>
+<b>71%</b><br/>
+🟢 5/7 days
+</td>
+</tr>
+
+<tr>
+<td><b>Week 3-4</b><br/>Core Features</td>
+<td>
+⏳ Decoy generator<br/>
+⏳ Decoy deployment<br/>
+⏳ Decoy tracking<br/>
+⏳ Alert system<br/>
+⏳ Email alerts<br/>
+⏳ Integration testing<br/>
+⏳ Week review
+</td>
+<td>
+<b>0%</b><br/>
+⚪ 0/7 days
+</td>
+</tr>
+
+<tr>
+<td><b>Week 5-6</b><br/>Service & Dashboard</td>
+<td>
+⏳ Windows service<br/>
+⏳ Service testing<br/>
+⏳ Web dashboard<br/>
+⏳ Dashboard features<br/>
+⏳ Real-time updates<br/>
+⏳ Polish & optimization<br/>
+⏳ Week review
+</td>
+<td>
+<b>0%</b><br/>
+⚪ 0/7 days
+</td>
+</tr>
+
+<tr>
+<td><b>Week 7-8</b><br/>Finalization</td>
+<td>
+⏳ System testing<br/>
+⏳ Bug fixes<br/>
+⏳ Performance testing<br/>
+⏳ Documentation<br/>
+⏳ User guide<br/>
+⏳ Presentation prep<br/>
+⏳ Final review
+</td>
+<td>
+<b>0%</b><br/>
+⚪ 0/14 days
+</td>
+</tr>
+</table>
+
+---
+
+## 🏆 Milestones
+
+- [x] 🎯 **Milestone 1:** Project Foundation (Day 1-2) ✅
+- [x] 🎯 **Milestone 2:** Monitoring System (Day 3-8) ✅
+- [ ] 🎯 **Milestone 3:** Threat Detection (Day 9-14) - 50% complete
+- [ ] 🎯 **Milestone 4:** Decoy System (Day 15-22)
+- [ ] 🎯 **Milestone 5:** Alert System (Day 23-28)
+- [ ] 🎯 **Milestone 6:** Service Deployment (Day 29-36)
+- [ ] 🎯 **Milestone 7:** Dashboard (Day 37-42)
+- [ ] 🎯 **Milestone 8:** Project Complete! (Day 43-56)
 
 ---
 
 ## 🛠️ Technology Stack
 
-**Language:** Python 3.14  
-**Key Libraries:**
-- `watchdog` - File system monitoring
-- `pyyaml` - Configuration management
-- `faker` - Decoy file generation
-- `pytest` - Testing framework
+<div align="center">
 
-**Development Tools:**
-- Git for version control
-- Virtual environment for dependency isolation
+| Category | Technology | Purpose |
+|----------|-----------|---------|
+| **Language** | ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white) | Core development |
+| **Monitoring** | ![Watchdog](https://img.shields.io/badge/Watchdog-Latest-green?style=flat) | File system events |
+| **Config** | ![YAML](https://img.shields.io/badge/YAML-Latest-red?style=flat) | Configuration management |
+| **Data Gen** | ![Faker](https://img.shields.io/badge/Faker-Latest-blue?style=flat) | Decoy file generation |
+| **Testing** | ![Pytest](https://img.shields.io/badge/Pytest-Latest-orange?style=flat) | Unit testing |
+| **Version Control** | ![Git](https://img.shields.io/badge/Git-Latest-F05032?style=flat&logo=git&logoColor=white) | Source control |
+
+</div>
 
 ---
 
@@ -132,162 +349,262 @@ An adaptive file system honeypot that monitors file activity, detects suspicious
 
 ```
 Adaptive-Honeypot-Security-Agent/
-├── src/
-│   ├── agent/          # Main agent entry point
-│   ├── monitor/        # File monitoring system ✅
-│   ├── decoy/          # Decoy file generation
-│   └── alert/          # Alert system
-├── config/             # Configuration files
-│   └── config.yaml     # Main configuration
-├── tests/              # Test files
-├── logs/               # Log files (generated)
-├── docs/               # Learning documentation (private)
-└── README.md           # This file
+│
+├── 📂 src/                      # Source code
+│   ├── 📂 agent/                # Main agent entry point
+│   ├── 📂 monitor/              # Monitoring system ✅
+│   │   ├── file_monitor.py     # File system monitoring
+│   │   ├── logger.py            # Event logging
+│   │   └── threat_detector.py  # Threat detection
+│   ├── 📂 decoy/                # Decoy generation (coming soon)
+│   └── 📂 alert/                # Alert system (coming soon)
+│
+├── 📂 config/                   # Configuration files
+│   └── config.yaml              # Main configuration
+│
+├── 📂 tests/                    # Test suite
+│   └── simple_test.py           # Unit tests ✅
+│
+├── 📂 logs/                     # Log files (auto-generated)
+│   └── events.log               # Event logs
+│
+├── 📂 docs/                     # Documentation (private)
+│   ├── 1_DAILY_TASKS.md         # Task tracking
+│   ├── 2_PROGRESS_TRACKER.md    # Progress tracking
+│   └── 3_LEARNING_NOTES.md      # Learning notes
+│
+└── 📄 README.md                 # This file
 ```
 
 ---
 
-## 🚀 How to Run
+## 💻 Installation
 
 ### Prerequisites
-- Python 3.10 or higher
-- Git
 
-### Setup
+- **Python 3.10+** - [Download here](https://www.python.org/downloads/)
+- **Git** - [Download here](https://git-scm.com/downloads)
+
+### Quick Start
+
 ```bash
-# Clone the repository
+# 1️⃣ Clone the repository
 git clone https://github.com/ARYANJAKKAL123/Adaptive-Honeypot-Security-Agent.git
 cd Adaptive-Honeypot-Security-Agent
 
-# Create virtual environment
+# 2️⃣ Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
+# 3️⃣ Activate virtual environment
 # Windows:
 venv\Scripts\activate
 # Mac/Linux:
 source venv/bin/activate
 
-# Install dependencies
+# 4️⃣ Install dependencies
 pip install -e ".[dev]"
-```
 
-### Run File Monitor (Current Feature)
-```bash
-# Test the file monitoring system
-python src/monitor/file_monitor.py
+# 5️⃣ Verify installation
+python -c "from src.monitor.file_monitor import FileMonitor; print('✅ Installation successful!')"
 ```
-
-This will:
-1. Create a `test_monitor` folder
-2. Start monitoring it for file changes
-3. Print events to console
-4. Press Ctrl+C to stop
 
 ---
 
-## 🧪 Testing
+## 🎮 Usage
+
+### Run File Monitor
+
+```bash
+# Start monitoring a directory
+python src/monitor/file_monitor.py
+```
+
+**What it does:**
+1. Creates a `test_monitor` folder
+2. Starts watching for file changes
+3. Logs all events to console and file
+4. Press `Ctrl+C` to stop
+
+### Run Threat Detector
+
+```bash
+# Test the threat detection system
+python src/monitor/threat_detector.py
+```
+
+**What it does:**
+1. Runs 4 test scenarios
+2. Shows threat scores in real-time
+3. Demonstrates different threat levels
+4. Displays final threat analysis
+
+### Run Tests
 
 ```bash
 # Run all tests
 pytest
 
+# Run with verbose output
+pytest -v
+
 # Run specific test file
-pytest tests/test_monitor.py
+pytest tests/simple_test.py
 ```
 
 ---
 
 ## 📖 Documentation
 
-- **Learning Materials:** See `docs/` folder (private, not in repo)
-- **Code Documentation:** Inline comments and docstrings in source files
-- **Configuration:** See `config/config.yaml` for settings
+### For Developers
+
+- **📘 Code Documentation:** Inline comments and docstrings in all source files
+- **📗 API Reference:** See individual module docstrings
+- **📙 Configuration Guide:** Check `config/config.yaml`
+
+### For Learning
+
+- **📚 Daily Tasks:** `docs/1_DAILY_TASKS.md` - Track your progress
+- **📊 Progress Tracker:** `docs/2_PROGRESS_TRACKER.md` - See overall progress
+- **📝 Learning Notes:** `docs/3_LEARNING_NOTES.md` - Reference and notes
+- **🔍 Detailed Explanations:** `docs/explanations/` - Deep dives into each component
 
 ---
 
 ## 🎯 Project Goals
 
-### Educational Goals
-- Learn file system monitoring techniques
-- Understand threat detection algorithms
-- Practice Python OOP and design patterns
-- Build a complete, working security tool
+### 🎓 Educational Goals
 
-### Technical Goals
-- Real-time file system monitoring
-- Adaptive threat response
-- Deployable security agent
-- Professional code quality
+- ✅ Learn file system monitoring techniques
+- ✅ Understand threat detection algorithms
+- ✅ Practice Python OOP and design patterns
+- 🔄 Build a complete, working security tool
+- 🔄 Gain experience with real-world security concepts
+
+### 🔧 Technical Goals
+
+- ✅ Real-time file system monitoring
+- ✅ Intelligent threat scoring
+- 🔄 Adaptive threat response
+- 🔄 Deployable security agent
+- 🔄 Professional code quality
 
 ---
 
 ## 📝 Recent Updates
 
-### February 17, 2026
-- ✅ Completed Day 9-10: Threat Detection Algorithm
-- ✅ Created ThreatDetector class with scoring system (0-100 scale)
-- ✅ Implemented 4 detection rules: rapid access, unusual time, sensitive files, deletions
-- ✅ Added threat level categories: Normal, Elevated, Suspicious, Critical
-- ✅ Comprehensive test scenarios included
-- 📊 Progress: 18% complete
+<details>
+<summary><b>📅 February 17, 2026</b> - Day 9-10 Complete</summary>
 
-### February 13, 2026
-- ✅ Completed Day 7-8: Testing & bug fixes
-- ✅ Created comprehensive test suite with 4 tests
-- ✅ All tests passing (logger, logging levels, monitor, events)
+### ✨ What's New
+- ✅ Implemented complete threat detection algorithm
+- ✅ Created ThreatDetector class with 10 methods
+- ✅ Added 4 detection rules (rapid access, unusual time, sensitive files, deletions)
+- ✅ Implemented threat level categories (Normal, Elevated, Suspicious, Critical)
+- ✅ Built comprehensive test scenarios
+- 📊 Progress: 14% → 18%
+
+### 🔧 Technical Details
+- **Lines of Code:** 268 lines in threat_detector.py
+- **Detection Rules:** 4 rules with configurable thresholds
+- **Scoring Range:** 0-100 with automatic capping
+- **Test Coverage:** 4 test scenarios included
+
+</details>
+
+<details>
+<summary><b>📅 February 13, 2026</b> - Day 7-8 Complete</summary>
+
+### ✨ What's New
+- ✅ Created comprehensive test suite
+- ✅ All 4 tests passing (logger, logging levels, monitor, events)
 - ✅ Fixed bugs in imports and indentation
-- 📊 Progress: 14% complete
+- ✅ Implemented mock objects for testing
+- 📊 Progress: 7% → 14%
 
-### February 8, 2026
-- ✅ Completed Day 5-6: Event logging system
-- ✅ Created EventLogger class with log levels
+</details>
+
+<details>
+<summary><b>📅 February 8, 2026</b> - Day 5-6 Complete</summary>
+
+### ✨ What's New
+- ✅ Implemented EventLogger class
+- ✅ Added log levels (INFO, WARNING, ERROR)
 - ✅ Integrated logging with FileMonitor
-- ✅ All events now logged to files with timestamps
+- ✅ All events now logged with timestamps
 
-### February 8, 2026
-- ✅ Completed Day 3-4: File monitoring system
-- ✅ Implemented FileMonitor class with event detection
-- ✅ Tested monitoring on test folder
-- 📊 Progress: 7% complete
-
-### February 8, 2026
-- ✅ Completed Day 1-2: Project setup
-- ✅ Organized project structure
-- ✅ Configured development environment
+</details>
 
 ---
 
 ## 🤝 Contributing
 
-This is a student project for educational purposes. Not accepting external contributions at this time.
+This is a student project for educational purposes. We're not accepting external contributions at this time, but feel free to:
+
+- ⭐ Star the repository
+- 🐛 Report bugs via issues
+- 💡 Suggest features via issues
+- 📖 Learn from the code
 
 ---
 
 ## 📄 License
 
-Educational project - All rights reserved
+**Educational Project** - All rights reserved
+
+This project is developed as part of a Final Year Diploma program and is intended for educational purposes only.
 
 ---
 
 ## 👥 Authors
 
-**Aryan Jakkal** - Developer  
-**Dhirayshil Sarwade** - Developer
+<div align="center">
 
-3rd Year Diploma Students  
-Final Year Project - 2025
+### 🎓 Development Team
+
+<table>
+<tr>
+<td align="center" width="50%">
+<img src="https://github.com/ARYANJAKKAL123.png" width="100px;" alt="Aryan Jakkal"/><br/>
+<b>Aryan Jakkal</b><br/>
+<sub>Lead Developer</sub><br/>
+<a href="https://github.com/ARYANJAKKAL123">GitHub</a>
+</td>
+<td align="center" width="50%">
+<b>Dhairayshil Sarwade</b><br/>
+<sub>Co-Developer</sub><br/>
+</td>
+</tr>
+</table>
+
+**3rd Year Diploma Students**  
+**Final Year Project - 2025**
+
+</div>
 
 ---
 
-## 📚 Learning Resources
+## 🌟 Acknowledgments
 
-For detailed learning materials and daily progress tracking, see the `docs/` folder:
-- [`docs/START_HERE.md`](docs/START_HERE.md) - Getting started guide
-- [`docs/1_DAILY_TASKS.md`](docs/1_DAILY_TASKS.md) - Daily task checklist
-- [`docs/2_PROGRESS_TRACKER.md`](docs/2_PROGRESS_TRACKER.md) - Progress tracking
-- [`docs/3_LEARNING_NOTES.md`](docs/3_LEARNING_NOTES.md) - Learning notes and reference
+Special thanks to:
+- **Watchdog** - For the excellent file monitoring library
+- **Python Community** - For comprehensive documentation
+- **Our Mentors** - For guidance and support
+
+---
+
+<div align="center">
+
+### 🚀 Building the Future of Adaptive Security
+
+**Made with ❤️ and Python**
+
+[![GitHub](https://img.shields.io/badge/GitHub-ARYANJAKKAL123-181717?style=flat&logo=github)](https://github.com/ARYANJAKKAL123)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
 
 ---
 
 **Last Updated:** February 17, 2026
+
+*"In cybersecurity, the best defense is an intelligent offense."*
+
+</div>

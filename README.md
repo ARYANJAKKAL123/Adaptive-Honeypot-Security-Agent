@@ -2,7 +2,7 @@
 
 **Final Year Diploma Project - 2025**  
 **Authors:** Aryan Jakkal & Dhairayshil Sarwade  
-**Status:** 🟢 In Development (Week 1 - 14% Complete)
+**Status:** 🟢 In Development (Week 1-2 - 18% Complete)
 
 ---
 
@@ -53,28 +53,40 @@ An adaptive file system honeypot that monitors file activity, detects suspicious
 
 **Files:** `tests/simple_test.py`
 
+### ✅ Day 9-10: Threat Detection Algorithm
+- **ThreatDetector class** - Analyzes file events and calculates threat scores
+- **Scoring system** - 0-100 scale with multiple detection rules
+- **Rapid access detection** - Detects too many files accessed quickly (+20 points)
+- **Unusual time detection** - Flags activity during midnight-5AM (+15 points)
+- **Sensitive file detection** - Identifies password/key/config files (+25 points)
+- **Deletion detection** - Catches mass file deletions (+30 points)
+- **Threat levels** - Normal, Elevated, Suspicious, Critical categories
+- **Test scenarios** - Comprehensive testing with sample data
+
+**Files:** `src/monitor/threat_detector.py`
+
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 9-10: Threat Detection Algorithm (Next)
-- ThreatDetector class
-- Scoring system (0-100 scale)
-- Suspicious behavior rules
-- Pattern detection
+### 🔨 Day 11-12: Scoring System Refinement (Next)
+- Integration with FileMonitor
+- Real-time threat detection
+- Fine-tune thresholds
+- Additional threat indicators
 
 ---
 
 ## 📊 Development Progress
 
-**Overall:** 14% Complete (8/56 days)
+**Overall:** 18% Complete (10/56 days)
 
-### Week 1-2: Foundation (57% Complete)
+### Week 1-2: Foundation (71% Complete)
 - [x] Day 1-2: Project setup
 - [x] Day 3-4: File monitoring
 - [x] Day 5-6: Event logging
 - [x] Day 7-8: Testing & bug fixes
-- [ ] Day 9-10: Threat detection algorithm
+- [x] Day 9-10: Threat detection algorithm
 - [ ] Day 11-12: Scoring system
 - [ ] Day 13-14: Week review
 
@@ -212,6 +224,14 @@ pytest tests/test_monitor.py
 
 ## 📝 Recent Updates
 
+### February 17, 2026
+- ✅ Completed Day 9-10: Threat Detection Algorithm
+- ✅ Created ThreatDetector class with scoring system (0-100 scale)
+- ✅ Implemented 4 detection rules: rapid access, unusual time, sensitive files, deletions
+- ✅ Added threat level categories: Normal, Elevated, Suspicious, Critical
+- ✅ Comprehensive test scenarios included
+- 📊 Progress: 18% complete
+
 ### February 13, 2026
 - ✅ Completed Day 7-8: Testing & bug fixes
 - ✅ Created comprehensive test suite with 4 tests
@@ -270,4 +290,4 @@ For detailed learning materials and daily progress tracking, see the `docs/` fol
 
 ---
 
-**Last Updated:** February 8, 2026
+**Last Updated:** February 17, 2026

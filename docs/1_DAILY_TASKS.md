@@ -135,34 +135,43 @@
 
 ---
 
-## 📅 Day 9-10: Threat Detection Algorithm
+## 📅 Day 9-10: Threat Detection Algorithm ✅ COMPLETED
 
-**Date:** _________
+**Date Completed:** February 17, 2026
 
 **Tasks:**
-- [ ] Create ThreatDetector class in `src/monitor/threat_detector.py`
-- [ ] Design scoring system (0-100 scale)
-- [ ] Implement basic rules:
+- [x] Create ThreatDetector class in `src/monitor/threat_detector.py`
+- [x] Design scoring system (0-100 scale)
+- [x] Implement basic rules:
   - Rapid file access = +20 points
   - Unusual time access = +15 points
-  - Multiple failed attempts = +25 points
-- [ ] Test with sample data
+  - Sensitive files = +25 points
+  - Multiple deletions = +30 points
+- [x] Test with sample data
 
 **Code to Write:**
 ```python
 # src/monitor/threat_detector.py
-- ThreatDetector class
-- calculate_threat_score() method
-- Rules for suspicious behavior
+- ThreatDetector class ✅
+- calculate_threat_score() method ✅
+- Rules for suspicious behavior ✅
+- check_rapid_access() method ✅
+- check_unusual_time() method ✅
+- check_sensitive_files() method ✅
+- check_deletions() method ✅
+- get_threat_level() method ✅
+- get_threat_info() method ✅
 ```
 
 **What I Learned:**
 ```
-1. 
-
-2. 
-
-3. 
+1. Threat detection uses scoring algorithms - multiple rules contribute points to calculate suspicion level
+2. Time-based analysis is crucial - using timestamps (time.time()) to detect rapid access and unusual hours
+3. List comprehensions filter data efficiently - [e for e in events if condition] creates filtered lists in one line
+4. Dictionaries store event data - {'type': 'created', 'path': 'file.txt', 'time': timestamp} keeps related info together
+5. Instance variables (self.variable) make data available to all methods in a class
+6. Threshold-based decision making - different score ranges (0-30, 31-50, 51-70, 71-100) trigger different threat levels
+7. The min() function caps values - min(score, 100) ensures score never exceeds 100 
 ```
 
 ---

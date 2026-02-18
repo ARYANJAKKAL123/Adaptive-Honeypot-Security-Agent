@@ -33,7 +33,7 @@ class FileMonitor(FileSystemEventHandler):
                 )    
     
     def on_modified(self, event):
-        """Called when a file is modifed"""
+        """Called when a file is modified"""
         if not event.is_directory:
             self.logger.log_info(f"File Modified: {event.src_path}")
 

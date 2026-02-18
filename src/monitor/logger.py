@@ -4,7 +4,7 @@ from datetime import datetime
 
 class EventLogger:
     """Handles logging of file system events 
-    Writes evnets to logs/events.log with timestamps
+    Writes events to logs/events.log with timestamps
     """
     def __init__(self,log_file='logs/events.log'):
         """Initialize the event logger
@@ -30,9 +30,9 @@ class EventLogger:
         self.logger = logging.getLogger(__name__)  
     
     def log_info(self, message):
-        """Log an informanal message
+        """Log an informational message
         
-        Agrs:
+        Args:
              message: The message to log
         """
         self.logger.info(message)
@@ -46,7 +46,7 @@ class EventLogger:
         self.logger.warning(message)
     
     def log_error(self, message):
-        """ Log a error message
+        """ Log an error message
         
             Args:
                message: The error message to log
@@ -57,7 +57,7 @@ class EventLogger:
 if __name__ =="__main__":
     logger = EventLogger() #create a logger object
     
-    logger.log_info("Logger initialezed Successfully")
+    logger.log_info("Logger initialized successfully")
     logger.log_info("This is a test info message")
     logger.log_warning("This is a test warning message")
     logger.log_error("This is a test error message")

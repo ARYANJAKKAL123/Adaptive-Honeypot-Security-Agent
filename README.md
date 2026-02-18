@@ -6,7 +6,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 [![Development Status](https://img.shields.io/badge/status-in%20development-yellow.svg)]()
-[![Progress](https://img.shields.io/badge/progress-21%25-brightgreen.svg)]()
+[![Progress](https://img.shields.io/badge/progress-25%25-brightgreen.svg)]()
 [![License](https://img.shields.io/badge/license-Educational-orange.svg)]()
 
 **Final Year Diploma Project - 2025**  
@@ -97,7 +97,7 @@ graph LR
 
 ## 🚀 Current Features (Implemented)
 
-### ✅ Phase 1: Foundation (86% Complete)
+### ✅ Phase 1: Foundation (100% Complete)
 
 <details open>
 <summary><b>🔧 Day 1-2: Project Setup</b></summary>
@@ -249,18 +249,42 @@ class FileMonitor(FileSystemEventHandler):
 
 </details>
 
+<details open>
+<summary><b>📊 Day 13-14: Week 2 Review</b></summary>
+
+```python
+# Comprehensive system review and testing
+✓ All code reviewed and typos fixed
+✓ System tested with test_system.py
+✓ All components verified working
+✓ Documentation updated
+✓ Ready for Week 3
+```
+
+**Review Results:**
+- ✅ EventLogger: Working perfectly
+- ✅ ThreatDetector: All 4 rules functional
+- ✅ FileMonitor: Integrated and monitoring
+- ✅ System Integration: Seamless operation
+- ✅ Code Quality: Clean and documented
+
+**Files:** `test_system.py`, `docs/WEEK_1-2_REVIEW.md`  
+**Status:** 🟢 Complete
+
+</details>
+
 ---
 
 ## 🔄 In Progress
 
-### 🔨 Day 13-14: Week 2 Review (Next)
+### 🔨 Day 15-16: Decoy File Generator (Next)
 
 ```
-⏳ Review all Week 1-2 code
-⏳ Fix any remaining bugs
-⏳ Update all documentation
-⏳ Comprehensive system testing
-⏳ Prepare for Week 3 (Decoy system)
+⏳ Create DecoyGenerator class
+⏳ Use Faker library for realistic data
+⏳ Generate fake credentials (passwords.txt)
+⏳ Generate fake documents
+⏳ Test decoy creation
 ```
 
 ---
@@ -269,10 +293,10 @@ class FileMonitor(FileSystemEventHandler):
 
 <div align="center">
 
-### Overall Progress: 21% Complete
+### Overall Progress: 25% Complete
 
 ```
-██████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 12/56 days
+██████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 14/56 days
 ```
 
 </div>
@@ -295,11 +319,12 @@ class FileMonitor(FileSystemEventHandler):
 ✅ Testing system<br/>
 ✅ Threat detection<br/>
 ✅ System integration<br/>
-⏳ Week review
+✅ Week review
 </td>
 <td>
-<b>86%</b><br/>
-🟢 6/7 days
+<b>100%</b><br/>
+🟢 7/7 days<br/>
+✅ COMPLETE
 </td>
 </tr>
 

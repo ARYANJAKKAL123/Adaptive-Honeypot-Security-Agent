@@ -56,8 +56,8 @@ This file is automatically updated by Kiro when you complete tasks!
 
 ---
 
-### Week 3-4: Core Features
-- [ ] Day 15-16: Decoy generator
+### Week 3-4: Core Features (Clean Architecture)
+- [ ] Day 15-16: Decoy generator (Clean Architecture approach)
 - [ ] Day 17-18: Decoy deployment
 - [ ] Day 19-20: Decoy tracking
 - [ ] Day 21-22: Alert system
@@ -66,6 +66,8 @@ This file is automatically updated by Kiro when you complete tasks!
 - [ ] Day 27-28: Review
 
 **Week 3-4 Status:** ___% complete
+
+**🏗️ ARCHITECTURE NOTE:** Starting Day 15-16, we implement Clean Architecture for UI-agnostic design!
 
 ---
 
@@ -149,6 +151,9 @@ This file is automatically updated by Kiro when you complete tasks!
 ---
 
 ### Day 15-16
+- **Date:** _________
+- **Commit:** `git commit -m "Day 15-16: Implemented decoy generator with clean architecture (Domain, Application, Infrastructure layers)"`
+- **Status:** ⏳ Not yet committed
 
 ---
 

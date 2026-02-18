@@ -277,15 +277,18 @@ class FileMonitor(FileSystemEventHandler):
 
 ## 🔄 In Progress
 
-### 🔨 Day 15-16: Decoy File Generator (Next)
+### 🔨 Day 15-16: Decoy File Generator (Clean Architecture) - Next
 
 ```
-⏳ Create DecoyGenerator class
-⏳ Use Faker library for realistic data
-⏳ Generate fake credentials (passwords.txt)
-⏳ Generate fake documents
-⏳ Test decoy creation
+⏳ Implement Clean Architecture layers
+⏳ Create domain entities (Decoy class)
+⏳ Create interfaces (IDecoyGenerator)
+⏳ Create application services (DecoyService)
+⏳ Create infrastructure (FileDecoyGenerator with Faker)
+⏳ Test decoy generation system
 ```
+
+**🏗️ Architecture Focus:** UI-agnostic design for future dashboard integration
 
 ---
 
@@ -329,9 +332,9 @@ class FileMonitor(FileSystemEventHandler):
 </tr>
 
 <tr>
-<td><b>Week 3-4</b><br/>Core Features</td>
+<td><b>Week 3-4</b><br/>Core Features<br/><i>(Clean Architecture)</i></td>
 <td>
-⏳ Decoy generator<br/>
+⏳ Decoy generator (Clean Architecture)<br/>
 ⏳ Decoy deployment<br/>
 ⏳ Decoy tracking<br/>
 ⏳ Alert system<br/>
@@ -341,7 +344,8 @@ class FileMonitor(FileSystemEventHandler):
 </td>
 <td>
 <b>0%</b><br/>
-⚪ 0/7 days
+⚪ 0/7 days<br/>
+🏗️ <i>UI-agnostic design</i>
 </td>
 </tr>
 
@@ -423,7 +427,12 @@ Adaptive-Honeypot-Security-Agent/
 │   │   ├── file_monitor.py     # File system monitoring
 │   │   ├── logger.py            # Event logging
 │   │   └── threat_detector.py  # Threat detection
-│   ├── 📂 decoy/                # Decoy generation (coming soon)
+│   ├── 📂 domain/               # Clean Architecture - Domain Layer (NEW)
+│   │   ├── 📂 entities/         # Business entities (Decoy class)
+│   │   └── 📂 interfaces/       # Interface contracts
+│   ├── 📂 application/          # Clean Architecture - Application Layer (NEW)
+│   ├── 📂 infrastructure/       # Clean Architecture - Infrastructure Layer (NEW)
+│   ├── 📂 decoy/                # Legacy decoy system (will be refactored)
 │   └── 📂 alert/                # Alert system (coming soon)
 │
 ├── 📂 config/                   # Configuration files

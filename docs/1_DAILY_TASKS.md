@@ -236,23 +236,46 @@
 
 ---
 
-## 📅 Day 15-16: Decoy File Generator
+## 📅 Day 15-16: Decoy File Generator (Clean Architecture)
 
 **Date:** _________
 
-**Tasks:**
-- [ ] Create DecoyGenerator class in `src/decoy/generator.py`
-- [ ] Use Faker library to create realistic files
-- [ ] Generate fake credentials (passwords.txt)
-- [ ] Generate fake documents (report.pdf)
-- [ ] Test decoy creation
+**IMPORTANT:** This day introduces Clean Architecture principles for future UI integration!
 
-**Code to Write:**
+**Tasks:**
+- [ ] Create domain entity: `src/domain/entities/decoy.py` (Decoy class)
+- [ ] Create interface: `src/domain/interfaces/decoy_generator.py` (IDecoyGenerator)
+- [ ] Create use case: `src/application/decoy_service.py` (DecoyService class)
+- [ ] Create implementation: `src/infrastructure/file_decoy_generator.py` (FileDecoyGenerator)
+- [ ] Test decoy generation with clean architecture
+- [ ] Update main integration to use new decoy system
+
+**Clean Architecture Structure:**
+```
+Domain Layer (Core Business Logic):
+├── src/domain/entities/decoy.py - What is a decoy?
+└── src/domain/interfaces/decoy_generator.py - How should decoys be generated?
+
+Application Layer (Use Cases):
+└── src/application/decoy_service.py - Orchestrates decoy operations
+
+Infrastructure Layer (External Dependencies):
+└── src/infrastructure/file_decoy_generator.py - Actually creates files using Faker
+```
+
+**Code to Write (Step by Step):**
 ```python
-# src/decoy/generator.py
-- DecoyGenerator class
-- generate_credential_file() method
-- generate_document_file() method
+# Step 1: src/domain/entities/decoy.py
+- Decoy dataclass (type, path, content, created_time)
+
+# Step 2: src/domain/interfaces/decoy_generator.py  
+- IDecoyGenerator interface (abstract methods)
+
+# Step 3: src/application/decoy_service.py
+- DecoyService class (business logic orchestration)
+
+# Step 4: src/infrastructure/file_decoy_generator.py
+- FileDecoyGenerator class (implements IDecoyGenerator using Faker)
 ```
 
 **What I Learned:**

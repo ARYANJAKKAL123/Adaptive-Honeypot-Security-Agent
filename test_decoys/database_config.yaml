@@ -1,0 +1,22 @@
+# Database Configuration
+# PRODUCTION SETTINGS - DO NOT MODIFY
+
+database:
+  host: 131.49.6.51
+  port: 8950
+  username: stephanie27
+  password: 373%SGY6*76APwHi
+  database_name: kid_production
+
+api:
+  endpoint: https://morgan-hart.info/api/v1
+  api_key: 715f8278-24a7-4800-acc5-ad94222777fa
+  secret_key: 080e6b9aaf1b7a6f118980a6da8cbb07ea70081b9bfb19ffcc8c8969e375a1dd
+  
+security:
+  encryption_key: f1a9d50d367ba7a934304444232df42edf4ec890033116bba8319e3684422561
+  jwt_secret: f712aa46-60ae-4dd2-b0ef-258a9633679d
+  
+admin:
+  email: feverett@example.com
+  backup_email: belindaadams@example.net

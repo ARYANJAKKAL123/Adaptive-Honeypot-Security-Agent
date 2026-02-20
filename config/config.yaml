@@ -8,6 +8,11 @@ monitoring:
   
 threat_detection:
   threshold: 50  # Deploy decoys when score > 50
+  time_window_seconds: 300
+  rapid_access_window_seconds: 10
+  rapid_access_threshold: 5   # 5+ file events in rapid window => suspicious
+  deletion_window_seconds: 30
+  deletion_threshold: 3       # 3+ deletions in deletion window => suspicious
   
 decoy:
   enabled: true

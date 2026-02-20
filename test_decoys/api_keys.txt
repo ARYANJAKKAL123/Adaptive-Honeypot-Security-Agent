@@ -1,0 +1,14 @@
+# Credentials File
+# DO NOT SHARE - CONFIDENTIAL
+
+Username: martindaniel
+Password: R)z6Mwob%K+E
+
+Admin Username: christina93
+Admin Password: %++H1+bqk231rfYs
+
+Database User: hkrause
+Database Password: kNtu&6gh2^4vFVr$)eYt
+
+API Key: c00dea7e-c140-4063-9bbc-a545c5b71457
+Secret Token: ef7005b62aed485a6dd08cf239cd96fee0e5df88ed9e840a0f38da6a666ae2bf

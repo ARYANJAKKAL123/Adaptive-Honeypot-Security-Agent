@@ -1,5 +1,8 @@
 import time
 from datetime import datetime
+from pathlib import Path
+
+import yaml
 from .logger import EventLogger
 
 
@@ -9,7 +12,7 @@ class ThreatDetector:
     Detects suspicious patterns and assigns threat levels
     """
     
-    def __init__(self):
+    def __init__(self, config_path="config/config.yaml"):
         """
         Initialize the threat detector
         Sets up event tracking and scoring system
@@ -42,7 +45,48 @@ class ThreatDetector:
         
         # Initialize logger
         self.logger = EventLogger()
+        self._load_config(config_path)
         self.logger.log_info("ThreatDetector initialized")
+
+    def _load_config(self, config_path):
+        """
+        Load threat detector settings from YAML config.
+        Falls back to constructor defaults if file/keys are missing.
+        """
+        config_file = Path(config_path)
+        if not config_file.is_absolute():
+            project_root = Path(__file__).resolve().parents[2]
+            config_file = project_root / config_file
+
+        if not config_file.exists():
+            self.logger.log_warning(
+                f"ThreatDetector config not found at {config_file}; using defaults"
+            )
+            return
+
+        try:
+            with open(config_file, "r", encoding="utf-8") as file:
+                config_data = yaml.safe_load(file) or {}
+        except Exception as exc:
+            self.logger.log_error(
+                f"Failed to load config {config_file}: {exc}; using defaults"
+            )
+            return
+
+        threat_config = config_data.get("threat_detection", {})
+        self.time_window = threat_config.get("time_window_seconds", self.time_window)
+        self.rapid_access_window = threat_config.get(
+            "rapid_access_window_seconds", self.rapid_access_window
+        )
+        self.rapid_access_threshold = threat_config.get(
+            "rapid_access_threshold", self.rapid_access_threshold
+        )
+        self.deletion_window = threat_config.get(
+            "deletion_window_seconds", self.deletion_window
+        )
+        self.deletion_threshold = threat_config.get(
+            "deletion_threshold", self.deletion_threshold
+        )
     
     def add_event(self, event_type, file_path):
         """
@@ -121,7 +165,7 @@ class ThreatDetector:
                         if current_time - e['time'] < self.rapid_access_window]
         
         # If too many events in short time, it's suspicious
-        if len(recent_events) > self.rapid_access_threshold:
+        if len(recent_events) >= self.rapid_access_threshold:
             return 20
         
         return 0
@@ -176,7 +220,7 @@ class ThreatDetector:
                          and current_time - e['time'] < self.deletion_window]
         
         # If too many deletions, it's very suspicious
-        if len(recent_deletes) > self.deletion_threshold:
+        if len(recent_deletes) >= self.deletion_threshold:
             return 30
         
         return 0

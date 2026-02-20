@@ -67,25 +67,46 @@ How: Assign points for suspicious actions (0-100 scale)
 
 ### Week 3-4: Core Features
 
+**Clean Architecture:**
+```
+What: Software design pattern with separated layers (Domain, Application, Infrastructure)
+Why: Makes code testable, maintainable, and UI-ready
+How: Domain (business logic) → Application (use cases) → Infrastructure (external dependencies)
+```
+
 **Faker Library:**
 ```
 What: Generates realistic fake data
 Why: Creates convincing decoy files
-How: 
+How: faker.user_name(), faker.password(), faker.email(), etc.
 ```
 
 **Decoy Strategy:**
 ```
 What: Fake files that look real to attackers
 Why: Traps attackers and alerts you
-How: 
+How: Generate with Faker, deploy when threat score > 50
+```
+
+**Dependency Injection:**
+```
+What: Passing interfaces instead of concrete implementations
+Why: Makes testing easy, allows swapping implementations
+How: DecoyService receives IDecoyGenerator interface
+```
+
+**Dataclasses:**
+```
+What: Python decorator that auto-generates __init__, __repr__, __eq__
+Why: Less boilerplate code, cleaner syntax
+How: @dataclass decorator on class
 ```
 
 **Alert System:**
 ```
 What: Notification when suspicious activity detected
 Why: Immediate response to threats
-How: 
+How: (Coming in Day 21-22)
 ```
 
 ---
@@ -198,7 +219,46 @@ fake = Faker()
 # Generate fake data
 fake_name = fake.name()
 fake_email = fake.email()
-fake_password = fake.password()
+fake_password = fake.password(length=12, special_chars=True)
+fake_address = fake.address()
+fake_ipv4 = fake.ipv4()
+fake_uuid = fake.uuid4()
+```
+
+### Clean Architecture Example
+```python
+# Domain Layer - Pure business logic
+@dataclass
+class Decoy:
+    decoy_type: str
+    file_path: str
+    content: str
+    created_at: datetime
+
+# Domain Layer - Interface
+class IDecoyGenerator(ABC):
+    @abstractmethod
+    def create_credential_decoy(self, file_path: str) -> Decoy:
+        pass
+
+# Application Layer - Business logic
+class DecoyService:
+    def __init__(self, generator: IDecoyGenerator):
+        self.generator = generator
+    
+    def generate_decoys_for_threat_level(self, threat_level: str, base_path: str):
+        if threat_level == "Suspicious":
+            return [self.generator.create_credential_decoy(f"{base_path}/passwords.txt")]
+
+# Infrastructure Layer - Implementation
+class FileDecoyGenerator(IDecoyGenerator):
+    def __init__(self):
+        self.faker = Faker()
+    
+    def create_credential_decoy(self, file_path: str) -> Decoy:
+        content = f"Username: {self.faker.user_name()}\nPassword: {self.faker.password()}"
+        # Write to file...
+        return Decoy("credential", file_path, content, datetime.now())
 ```
 
 ### Basic Logging

@@ -292,46 +292,53 @@ Infrastructure Layer (External Dependencies):
 
 ---
 
-## 📅 Day 17-18: Decoy Deployment
+## 📅 Day 17-18: Decoy Deployment ✅ COMPLETED
 
-**Date:** _________
+**Date Completed:** February 20, 2026
 
 **Tasks:**
-- [ ] Create DecoyManager class in `src/decoy/manager.py`
-- [ ] Deploy decoys when threat score > 50
-- [ ] Place decoys in strategic locations
-- [ ] Track deployed decoys
-- [ ] Test deployment logic
+- [x] Create DecoyManager class in `src/monitor/decoy_manager.py`
+- [x] Integrate DecoyManager with FileMonitor
+- [x] Deploy decoys automatically when threat score >= 51
+- [x] Track deployed decoys
+- [x] Detect when attacker accesses decoys
+- [x] Test deployment logic - all working!
 
 **What I Learned:**
 ```
-1. 
+1. System integration connects multiple layers - Monitor → DecoyManager → DecoyService → FileDecoyGenerator
+2. DecoyManager bridges monitoring system with clean architecture decoy system
+3. Automatic deployment triggers when threat score >= 51 (Suspicious or Critical)
+4. Duplicate deployment prevention - only deploy once per session
+5. Decoy access detection - can identify when attacker touches a decoy file
+6. Real-time threat response - system adapts automatically to threats
+7. Integration testing validates all components work together seamlessly
+8. File system operations - creating directories, checking file existence
+```
 
-2. 
-
-3. 
+3. Deployment deduplication prevents repeatedly generating identical decoys for the same location/threat level.
 ```
 
 ---
 
 ## 📅 Day 19-20: Decoy Tracking
 
-**Date:** _________
+**Date Completed:** February 21, 2026
 
 **Tasks:**
-- [ ] Monitor decoy file access
-- [ ] Log when attacker touches decoy
-- [ ] Capture attacker information
-- [ ] Test tracking system
-- [ ] Document tracking logic
+- [x] Monitor decoy file access
+- [x] Log when attacker touches decoy
+- [x] Capture attacker information
+- [x] Test tracking system
+- [x] Document tracking logic
 
 **What I Learned:**
 ```
-1. 
+1. Decoy tracking is most reliable when it runs in the same file-event pipeline as threat detection.
 
-2. 
+2. Capturing context (timestamp, event type, path, threat level, score) makes future alerting much easier.
 
-3. 
+3. Separate tests for manager-level tracking and monitor integration prevent regressions.
 ```
 
 ---

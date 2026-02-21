@@ -2,7 +2,7 @@
 **Project:** Adaptive File System Honeypot Agent  
 **Authors:** Aryan Jakkal & Dhirayshil Sarwade  
 **Handoff Date:** February 20, 2026  
-**Status:** Week 1-2 Complete (25% done) | Ready for Week 3 (Clean Architecture Implementation)
+**Status:** Week 1-2 + Day 15-20 Complete (36% done) | Ready for Day 21-22 (Alert System)
 
 ---
 
@@ -276,7 +276,7 @@ Adaptive-Honeypot-Security-Agent/
 
 ### Week 3-4: Decoy System (Clean Architecture)
 
-#### Day 15-16: Decoy File Generator ⏳ NEXT
+#### Day 15-16: Decoy File Generator ✅ COMPLETE
 **Priority: HIGH**
 - [ ] Create `src/domain/entities/decoy.py` - Decoy dataclass
 - [ ] Create `src/domain/interfaces/decoy_generator.py` - IDecoyGenerator interface
@@ -301,16 +301,16 @@ Infrastructure (External Dependencies):
   - Writes to actual file system
 ```
 
-#### Day 17-18: Decoy Deployment
-- [ ] Create DecoyManager class
-- [ ] Deploy decoys when threat score > 50
-- [ ] Strategic placement logic
-- [ ] Track deployed decoys (list/dict)
+#### Day 17-18: Decoy Deployment ✅ COMPLETE (February 21, 2026)
+- [x] Create DecoyManager class
+- [x] Deploy decoys when threat score > 50
+- [x] Strategic placement logic
+- [x] Track deployed decoys (list/dict)
 
-#### Day 19-20: Decoy Tracking
-- [ ] Monitor decoy file access
-- [ ] Log when attacker touches decoy
-- [ ] Capture attacker information (timestamp, file accessed)
+#### Day 19-20: Decoy Tracking ✅ COMPLETE (February 21, 2026)
+- [x] Monitor decoy file access
+- [x] Log when attacker touches decoy
+- [x] Capture attacker information (timestamp, file accessed, event type, threat level, score)
 
 #### Day 21-22: Alert System
 - [ ] Create AlertManager class
@@ -369,7 +369,7 @@ Infrastructure (External Dependencies):
 ## 7️⃣ Continuation Instructions
 
 ### Where to Resume Work
-**Current Position:** Day 15-16 - Decoy File Generator (Clean Architecture)
+**Current Position:** Day 21-22 - Alert System
 
 **Immediate Context:**
 - Week 1-2 foundation complete and tested
@@ -379,34 +379,20 @@ Infrastructure (External Dependencies):
 
 ### Priority Order of Tasks
 
-**Priority 1: Day 15-16 Implementation (NEXT)**
-1. Guide user to create `src/domain/entities/decoy.py`
-   - Decoy dataclass with: type, path, content, created_at
-   - No external dependencies (pure Python)
-   
-2. Guide user to create `src/domain/interfaces/decoy_generator.py`
-   - IDecoyGenerator abstract interface
-   - Methods: create_credential_decoy(), create_document_decoy()
-   
-3. Guide user to create `src/application/decoy_service.py`
-   - DecoyService class
-   - Business logic: when to generate decoys based on threat level
-   - Uses IDecoyGenerator interface (dependency injection)
-   
-4. Guide user to create `src/infrastructure/file_decoy_generator.py`
-   - FileDecoyGenerator implements IDecoyGenerator
-   - Uses Faker library for realistic content
-   - Writes to actual file system
+**Priority 1: Day 21-22 Implementation (NEXT)**
+1. Create `src/alert/manager.py` with AlertManager class
+2. Trigger alerts when decoy access events are recorded
+3. Add alert levels (Low/Medium/High/Critical)
+4. Integrate alerts with FileMonitor workflow without breaking current logic
 
-**Priority 2: Integration with Existing System**
-- Connect DecoyService to ThreatDetector
-- Deploy decoys when threat score > 50
-- Log decoy deployment events
+**Priority 2: Alert Payload Design**
+- Include decoy path, event type, timestamp, threat level, and threat score
+- Keep payload reusable for future email/web alerts
 
 **Priority 3: Testing**
-- Unit tests for each layer (Domain, Application, Infrastructure)
-- Integration tests for decoy generation workflow
-- Update test suite in `tests/`
+- Add unit tests for alert level mapping and manager behavior
+- Add integration tests for decoy-access-to-alert flow
+- Keep all existing tests passing
 
 ### Constraints That Must Be Preserved
 
@@ -590,31 +576,20 @@ python src/monitor/threat_detector.py
 
 ## 🚀 Recommended Immediate Next Action
 
-**Action:** Guide user through Step 1 of Day 15-16 - Create Domain Entity
+**Action:** Start Day 21-22 - Alert System
 
 **Specific Steps:**
-1. Read `docs/explanations/DAY_15-16_CLEAN_ARCHITECTURE_GUIDE.md` to understand architecture
-2. Ask user to create file: `src/domain/entities/decoy.py`
-3. Explain what a Decoy entity represents (business object, no dependencies)
-4. Guide user to create Decoy dataclass with fields:
-   - `decoy_type: str` (e.g., "credential", "document")
-   - `file_path: str` (where decoy is placed)
-   - `content: str` (fake content)
-   - `created_at: datetime` (timestamp)
-5. Verify user understands Domain layer principles
-6. Proceed to Step 2 (Interface creation) only after Step 1 complete
+1. Create AlertManager and define alert levels
+2. Connect decoy access events to alert creation
+3. Add tests for alert generation and severity mapping
+4. Keep tracking + deployment behavior stable while extending alerting
 
 **Communication Style:**
-- Use analogies and real-world examples
-- Ask questions to verify understanding
-- Provide structure, let user write code
-- Celebrate small wins
-- Update documentation after each step
-
-**Example Opening:**
-"Let's start Day 15-16! We're implementing Clean Architecture for the decoy system. First, we'll create the Domain layer - the core business logic. Think of the Domain layer as the 'brain' of your decoy system - it defines WHAT a decoy is, without worrying about HOW to create it. Ready to create your first Domain entity?"
+- Focus on clear implementation checkpoints
+- Validate each change with tests
+- Keep docs synchronized with code progress
 
 ---
 
 **End of Technical Handoff Summary**  
-**Next Agent: Continue from Day 15-16, Step 1 - Domain Entity Creation**
+**Next Agent: Continue from Day 21-22, Step 1 - Alert Manager Creation**

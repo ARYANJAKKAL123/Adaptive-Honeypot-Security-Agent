@@ -1,74 +1,65 @@
 from .logger import EventLogger
 from .threat_detector import ThreatDetector
+from .decoy_manager import DecoyManager
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import time
 
+
 class FileMonitor(FileSystemEventHandler):
-    """Monitors file system for changes """
-    
+    """Monitors file system for changes."""
+
     def __init__(self):
         super().__init__()
         self.logger = EventLogger()
         self.threat_detector = ThreatDetector()
+        self.decoy_manager = DecoyManager()
         self.logger.log_info("FileMonitor initialized with threat detection")
-    
+
     def on_created(self, event):
-        """Called when a file is created """
+        """Called when a file is created."""
         if not event.is_directory:
-            self.logger.log_info(f"File Created: {event.src_path}")
+            self._handle_file_event("created", event.src_path, "File Created")
 
-            # Add event to threat detector
-            self.threat_detector.add_event("created", event.src_path)
-
-            # Check threat level
-            threat_level = self.threat_detector.get_threat_level()
-            threat_score = self.threat_detector.threat_score
-
-            # Log if threat is elevated or higher
-            if threat_score >= 31:
-                self.logger.log_warning(
-                    f"Threat Level: {threat_level} (Score: {threat_score}) - "
-                    f"File: {event.src_path}"
-                )    
-    
     def on_modified(self, event):
-        """Called when a file is modified"""
+        """Called when a file is modified."""
         if not event.is_directory:
-            self.logger.log_info(f"File Modified: {event.src_path}")
+            self._handle_file_event("modified", event.src_path, "File Modified")
 
-            # Add event to threat detector
-            self.threat_detector.add_event("modified", event.src_path)  # ← "modified" not "created"
-        
-            # Check threat level
-            threat_level = self.threat_detector.get_threat_level()
-            threat_score = self.threat_detector.threat_score
-        
-            # Log if threat is elevated or higher
-            if threat_score >= 31:
-                self.logger.log_warning(
-                    f"Threat Level: {threat_level} (Score: {threat_score}) - "
-                    f"File: {event.src_path}"
-                )
-    
     def on_deleted(self, event):
-        """Called when a file is deleted"""
+        """Called when a file is deleted."""
         if not event.is_directory:
-            self.logger.log_info(f"File Deleted: {event.src_path}")
+            self._handle_file_event("deleted", event.src_path, "File Deleted")
 
-            # Add event to threat detector
-            self.threat_detector.add_event("deleted", event.src_path)
+    def _handle_file_event(self, event_type, file_path, event_label):
+        """Analyze file events and trigger decoy deployment when needed."""
+        self.logger.log_info(f"{event_label}: {file_path}")
 
-            # Check threat level
-            threat_level = self.threat_detector.get_threat_level()
-            threat_score = self.threat_detector.threat_score
+        self.threat_detector.add_event(event_type, file_path)
+        threat_level = self.threat_detector.get_threat_level()
+        threat_score = self.threat_detector.threat_score
 
-            # Log if threat is elevated or higher
-            if threat_score >= 31:
-                self.logger.log_warning(
-                    f"Threat Level: {threat_level} (Score: {threat_score}) - "
-                    f"File: {event.src_path}"
-                )
+        if threat_score >= 31:
+            self.logger.log_warning(
+                f"Threat Level: {threat_level} (Score: {threat_score}) - File: {file_path}"
+            )
+
+        deployed = self.decoy_manager.deploy_for_threat(
+            threat_score=threat_score,
+            threat_level=threat_level,
+            trigger_path=file_path,
+        )
+        if deployed:
+            self.logger.log_warning(
+                f"Decoy deployment triggered by {file_path}: {len(deployed)} decoy(s) created"
+            )
+
+        self.decoy_manager.track_decoy_access(
+            file_path=file_path,
+            event_type=event_type,
+            threat_level=threat_level,
+            threat_score=threat_score,
+        )
 
 def start_monitoring(path_to_watch):
     """ Start monitoring a directory"""

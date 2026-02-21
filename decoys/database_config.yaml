@@ -1,0 +1,22 @@
+# Database Configuration
+# PRODUCTION SETTINGS - DO NOT MODIFY
+
+database:
+  host: 49.21.128.38
+  port: 5270
+  username: martinnelson
+  password: kJ59bV+eH**13dQw
+  database_name: represent_production
+
+api:
+  endpoint: https://harris.com/api/v1
+  api_key: bdbfce2e-c71b-4a79-b0a8-d1bfc1ef9afb
+  secret_key: 9d73ec4539c58f05f0074218d1d10decc147054ab8c90d7676ced9e6c11f131d
+  
+security:
+  encryption_key: 6523d6d3b321c4da8e2386c41b3ab221b3478598c7eb3dffdd34a5f912ddc856
+  jwt_secret: 81440647-2cc8-4e2f-b005-b38fbc2e4e92
+  
+admin:
+  email: joseph25@example.net
+  backup_email: kellycamacho@example.org
